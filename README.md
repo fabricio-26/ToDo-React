@@ -1,4 +1,4 @@
-# To-do list with React (Version Development)
+# To-do list with React (Development version)
 
 <!-- ## Prints de tela
 ![print1](https://****.jpg)
