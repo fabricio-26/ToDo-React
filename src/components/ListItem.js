@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "./Card";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 function DoneImg(props) {
   if (props.done) {
@@ -10,15 +12,29 @@ function DoneImg(props) {
 }
 
 function ListItem(props) {
-  return (<li>
-          <Card className={props.item.done ? "done item" : "item"}>
-          {props.item.text}
-            <div>
-              <button onClick={() => {props.onDone(props.item);}}><DoneImg done={props.item.done}></DoneImg></button>
-              <button onClick={() => { props.onItemDeleted(props.item);}}><img alt="Delete" src="./assets/lx.png"></img></button>
-            </div>
-          </Card>
-        </li>)
+  return (
+  <li>
+    <Card className={props.item.done ? "done item" : "item"}> {props.item.text}
+      <div>
+        <br></br>
+        <input 
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          onClick={() => {props.onDone(props.item);}}>
+        </input>
+
+        <button type="button"
+          class="btn btn-default"
+          aria-label="Left Align"
+          onClick={() => {props.onDone(props.item);}}>
+          <FontAwesomeIcon icon={faTrashCan} size="2x"/>
+        </button>
+      </div>
+    </Card>
+  </li>
+  )
 }
 
 export default ListItem;

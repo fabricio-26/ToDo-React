@@ -20,8 +20,16 @@ function TodoForm(props) {
 
   return (
     <form>
-      <input onChange={handleChange} type="text" value={text}></input>
-      <button onClick={addItem}>Add</button>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Insira uma nota aqui</label>
+        <br></br>
+        <input onChange={handleChange} type="text" value={text} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+        <br></br>
+        <button onClick={addItem} class="btn btn-primary">Add...</button>
+        <br></br>
+        <br></br>
+      </div>
     </form>
   );
 }
